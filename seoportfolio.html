@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SEO Work | Piyush Raut</title>
+<meta name="description" content="SEO writing by Piyush Raut. Articles ranking #1 on Google across healthcare and wellness verticals."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#ffffff;--bg-alt:#f5f5f5;--accent:#111111;--accent-dim:rgba(0,0,0,0.06);--text:#111111;--gray:#444444;--light-gray:#777777;--card-bg:#ffffff;--card-border:#e0e0e0;--nav-bg:rgba(255,255,255,0.95)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}a{text-decoration:none;color:inherit}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background 0.3s}.nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--card-border)}.nav-brand{font-weight:800;font-size:20px;letter-spacing:-0.5px;color:var(--text)}.nav-brand span{opacity:0.4}.nav-links{display:flex;gap:32px}.nav-links a{font-size:13px;font-weight:500;color:var(--gray);letter-spacing:0.5px;transition:color 0.3s;text-transform:lowercase}.nav-links a:hover{color:var(--accent)}.nav-back{font-size:13px;font-weight:500;color:var(--gray);letter-spacing:0.5px;transition:color 0.3s}.nav-back:hover{color:var(--accent)}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 40px 60px}.hero-inner{max-width:960px;margin:0 auto;width:100%}.hero-label{font-size:14px;font-weight:500;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}.hero h1{font-size:64px;font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:24px;color:var(--text)}.hero-desc{font-family:'Lora',serif;font-size:19px;line-height:1.75;color:var(--gray);max-width:600px;margin-bottom:40px}.hero-stats{display:flex;gap:48px;margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--card-border)}.stat-num{font-size:42px;font-weight:800;color:var(--accent);line-height:1}.stat-label{font-size:12px;color:var(--gray);margin-top:6px;letter-spacing:0.5px;font-weight:500}
+
+.btn{display:inline-block;padding:14px 32px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s;border:none;letter-spacing:0.3px}.btn-accent{background:var(--accent);color:#ffffff}.btn-accent:hover{opacity:0.85;transform:translateY(-2px)}.btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--card-border);margin-left:12px}.btn-outline:hover{border-color:var(--accent)}
+
+.section{padding:80px 40px}.section-inner{max-width:960px;margin:0 auto}.section-label{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}.section-title{font-size:40px;font-weight:800;letter-spacing:-1.5px;margin-bottom:10px;color:var(--text)}.section-subtitle{font-family:'Lora',serif;font-size:17px;color:var(--gray);margin-bottom:44px;max-width:520px;line-height:1.7}.section-alt{background:var(--bg-alt)}
+
+.reveal{opacity:0;transform:translateY(20px);transition:all 0.7s cubic-bezier(0.25,0.46,0.45,0.94)}.reveal.visible{opacity:1;transform:translateY(0)}
+
+.articles-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.article-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:28px;transition:all 0.4s;display:flex;flex-direction:column}
+.article-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.06)}
+.article-card.featured{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between;gap:32px}
+.article-brand{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--light-gray);margin-bottom:10px}
+.article-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.4}
+.article-keyword{font-size:13px;color:var(--gray);font-family:'Lora',serif;font-style:italic}
+.article-keyword strong{font-style:normal;color:var(--accent);font-weight:600}
+.article-note{font-size:12px;color:var(--light-gray);font-family:'Lora',serif;font-style:italic;margin-top:8px;line-height:1.6}
+.article-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;border-top:1px solid var(--card-border)}
+.article-link{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:0.5px}
+.rank-block{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:80px;height:80px;border-radius:10px;background:var(--accent-dim);border:1.5px solid var(--card-border);flex-shrink:0}
+.rank-block.sm{min-width:64px;height:64px}
+.rank-num{font-size:2rem;font-weight:800;color:var(--accent);line-height:1;letter-spacing:-1px}
+.rank-num.sm{font-size:1.5rem}
+.rank-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--light-gray);margin-top:3px;font-weight:600}
+
+.approach-body{font-family:'Lora',serif;font-size:17px;line-height:1.85;color:var(--text);max-width:680px}
+.approach-body p{margin-bottom:18px}
+.callout{border-left:3px solid var(--accent);padding:20px 28px;margin:32px 0;background:var(--accent-dim);border-radius:0 8px 8px 0}
+.callout p{font-family:'Lora',serif;font-size:16px;line-height:1.7;color:var(--text);margin:0}
+
+.steps-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}
+.step-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:24px;transition:all 0.3s}
+.step-card:hover{border-color:var(--accent)}
+.step-num{font-size:32px;font-weight:800;color:var(--accent);opacity:0.15;line-height:1;margin-bottom:6px}
+.step-title{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--text)}
+.step-body{font-size:13px;line-height:1.65;color:var(--gray)}
+
+.chatgpt-box{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:32px;margin-top:32px}
+.chatgpt-bar{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--card-border)}
+.dot{width:10px;height:10px;border-radius:50%;background:#10a37f;flex-shrink:0}
+.chatgpt-tag{font-size:13px;font-weight:600;color:var(--gray);letter-spacing:0.5px}
+.chat-role{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--light-gray);margin-bottom:6px}
+.bubble{border-radius:10px;padding:16px 20px;margin-bottom:16px;font-family:'Lora',serif;font-size:15px;line-height:1.7}
+.bubble.user{background:var(--bg-alt);border:1px solid var(--card-border);color:var(--text)}
+.bubble.ai{background:#f0fdf8;border:1px solid #c6f0df;color:#111}
+.bubble.ai strong{color:#0a6640}
+.chat-disclaimer{font-size:12px;color:var(--light-gray);font-family:'Lora',serif;font-style:italic;margin-top:4px}
+
+.concepts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.concept-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:24px;transition:all 0.3s}
+.concept-card:hover{border-color:var(--accent)}
+.concept-title{font-size:22px;font-weight:800;letter-spacing:-0.5px;color:var(--accent);margin-bottom:4px}
+.concept-full{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--light-gray);margin-bottom:14px}
+.concept-desc{font-size:13px;line-height:1.65;color:var(--gray);margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;background:var(--bg-alt);border:1px solid var(--card-border);color:var(--gray)}
+
+.footer{text-align:center;padding:32px;font-size:12px;color:var(--light-gray);border-top:1px solid var(--card-border)}
+.footer a{color:var(--accent);font-weight:600}
+
+@media(max-width:768px){
+  .nav{padding:16px 20px}.nav-links{display:none}
+  .hero{padding:80px 20px 60px}.hero h1{font-size:38px}
+  .hero-stats{flex-wrap:wrap;gap:24px}
+  .section{padding:60px 20px}.section-title{font-size:30px}
+  .articles-grid{grid-template-columns:1fr}
+  .article-card.featured{grid-column:auto;flex-direction:column}
+  .steps-grid{grid-template-columns:1fr}
+  .concepts-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="https://thesecretelixir.github.io/portfolio/" class="nav-brand">piyush<span>.raut</span></a>
+  <div class="nav-links">
+    <a href="#articles">articles</a>
+    <a href="#approach">approach</a>
+    <a href="#boldcare">bold care + chatgpt</a>
+    <a href="#methodology">seo · geo · aeo</a>
+  </div>
+  <a href="https://thesecretelixir.github.io/portfolio/" class="nav-back">← portfolio</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner reveal">
+    <div class="hero-label">Search Performance</div>
+    <h1>Content that<br/>ranks.</h1>
+    <p class="hero-desc">I don't just write. I write with intent. These are pieces I've authored that sit on Google's first page for two brands in very different, very competitive categories.</p>
+    <div class="hero-stats">
+      <div><div class="stat-num">5×</div><div class="stat-label">Rank #1</div></div>
+      <div><div class="stat-num">7</div><div class="stat-label">Articles ranked</div></div>
+      <div><div class="stat-num">2</div><div class="stat-label">Brand verticals</div></div>
+      <div><div class="stat-num">Top 10</div><div class="stat-label">Every piece</div></div>
+    </div>
+    <a href="#articles" class="btn btn-accent">see ranked articles</a>
+    <a href="https://thesecretelixir.github.io/portfolio/" class="btn btn-outline">full portfolio</a>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section id="articles" class="section section-alt">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">ranked work</div>
+      <h2 class="section-title">Articles on page one.</h2>
+      <div class="section-subtitle">From legacy healthcare to taboo D2C. Here's what earned a spot in Google's top results.</div>
+    </div>
+
+    <div class="articles-grid">
+
+      <a href="https://www.drbatras.com/best-homeopathic-medicines-for-hair-loss" target="_blank" class="article-card featured reveal">
+        <div style="flex:1">
+          <div class="article-brand">Dr. Batra's Healthcare</div>
+          <div class="article-title" style="font-size:20px;">Best Homeopathic Medicines for Hair Loss</div>
+          <div class="article-keyword">Targeting: <strong>best homeopathic medicines for hair loss</strong></div>
+          <div class="article-note">High-competition medical keyword. Outranks category giants through topical authority and a content structure built for how people actually search, not how brands want to be found.</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0">
+          <div class="rank-block"><div class="rank-num">#1</div><div class="rank-label">Google</div></div>
+          <span style="font-size:11px;color:var(--light-gray);font-weight:600">read ↗</span>
+        </div>
+      </a>
+
+      <a href="https://www.drbatras.com/best-treatment-psoriasis-effective-solutions-clear-skin" target="_blank" class="article-card reveal">
+        <div class="article-brand">Dr. Batra's Healthcare</div>
+        <div class="article-title">Best Treatment for Psoriasis: Effective Solutions for Clear Skin</div>
+        <div class="article-keyword">Targeting: <strong>best treatment for psoriasis</strong></div>
+        <div class="article-footer">
+          <div class="rank-block sm"><div class="rank-num sm">#1</div><div class="rank-label">Google</div></div>
+          <span class="article-link">read ↗</span>
+        </div>
+      </a>
+
+      <a href="https://www.drbatras.com/12-types-of-lung-infections" target="_blank" class="article-card reveal">
+        <div class="article-brand">Dr. Batra's Healthcare</div>
+        <div class="article-title">12 Types of Lung Infections</div>
+        <div class="article-keyword">Targeting: <strong>types of lung infections</strong></div>
+        <div class="article-footer">
+          <div class="rank-block sm"><div class="rank-num sm">#1</div><div class="rank-label">Google</div></div>
+          <span class="article-link">read ↗</span>
+        </div>
+      </a>
+
+      <a href="https://www.drbatras.com/10-tips-for-hair-care-dos-and-donts" target="_blank" class="article-card reveal">
+        <div class="article-brand">Dr. Batra's Healthcare</div>
+        <div class="article-title">10 Tips for Hair Care: Dos and Don'ts</div>
+        <div class="article-keyword">Targeting: <strong>hair care dos and don'ts</strong></div>
+        <div class="article-footer">
+          <div class="rank-block sm"><div class="rank-num sm">#1</div><div class="rank-label">Google</div></div>
+          <span class="article-link">read ↗</span>
+        </div>
+      </a>
+
+      <a href="https://www.drbatras.com/top-5-tips-hair-fall-control-winter" target="_blank" class="article-card reveal">
+        <div class="article-brand">Dr. Batra's Healthcare</div>
+        <div class="article-title">Top 5 Tips for Hair Fall Control in Winter</div>
+        <div class="article-keyword">Targeting: <strong>how to prevent hair loss in winter</strong></div>
+        <div class="article-footer">
+          <div class="rank-block sm"><div class="rank-num sm">#2</div><div class="rank-label">Google</div></div>
+          <span class="article-link">read ↗</span>
+        </div>
+      </a>
+
+      <a href="https://www.drbatras.com/stages-of-female-patterned-hairloss-and-its-treatment" target="_blank" class="article-card reveal">
+        <div class="article-brand">Dr. Batra's Healthcare</div>
+        <div class="article-title">Stages of Female Pattern Hair Loss & Its Treatment</div>
+        <div class="article-keyword">Targeting: <strong>female pattern baldness treatment</strong></div>
+        <div class="article-footer">
+          <div class="rank-block sm"><div class="rank-num sm">#3</div><div class="rank-label">Google</div></div>
+          <span class="article-link">read ↗</span>
+        </div>
+      </a>
+
+      <a href="https://boldcare.in/blogs/blogs/best-ultra-thin-condoms-in-india-2025-guide" target="_blank" class="article-card featured reveal" style="background:var(--bg-alt)">
+        <div style="flex:1">
+          <div class="article-brand">Bold Care</div>
+          <div class="article-title" style="font-size:18px;">Best Ultra-Thin Condoms in India: 2025 Guide</div>
+          <div class="article-keyword">Targeting: <strong>best ultra-thin condoms in India</strong></div>
+          <div class="article-note">A buying guide written for real people asking real questions. Ranks #8 on Google and gets cited by ChatGPT when users ask about ultra-thin condoms in India.</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0">
+          <div class="rank-block"><div class="rank-num">#8</div><div class="rank-label">Google</div></div>
+          <span style="font-size:11px;color:var(--light-gray);font-weight:600">read ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach" class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">how I write for search</div>
+      <h2 class="section-title">My SEO approach.</h2>
+    </div>
+
+    <div class="approach-body reveal" style="margin-top:32px">
+      <p>Most writers treat SEO as a checklist: stuff in keywords, hit a word count, add some headers. That is not how sustainable rankings happen. I start with the human first. What is someone actually trying to understand when they type that query? Then I build content that answers that intent more completely than anything else on the page.</p>
+      <div class="callout">
+        <p><strong>SEO is not about tricking Google. It is about being genuinely the best answer to a question. I write to be that answer.</strong></p>
+      </div>
+      <p>Working at Dr Batra's taught me how to build topical authority in a regulated, sensitive category. Healthcare content has a higher bar. E-E-A-T (Experience, Expertise, Authoritativeness, Trust) is not optional, it is survival. Every article had to hold up medically, emotionally, and strategically.</p>
+      <p>At Bold Care, the category demands a different kind of writing. Content here needs to be clear, credible, and genuinely useful to someone with a real question. That pressure shaped how I think about every brief.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">01</div>
+        <div class="step-title">Intent mapping before keywords</div>
+        <div class="step-body">I research what someone actually wants when they search a term: informational, navigational, transactional, or investigational. The keyword is just the surface. Intent determines structure.</div>
+      </div>
+      <div class="step-card reveal" style="transition-delay:70ms">
+        <div class="step-num">02</div>
+        <div class="step-title">SERP analysis before writing</div>
+        <div class="step-body">I study every result on page one: what format won, what depth won, what angle is missing. I write to fill the gap, not clone the leader.</div>
+      </div>
+      <div class="step-card reveal" style="transition-delay:140ms">
+        <div class="step-num">03</div>
+        <div class="step-title">Structure search engines can read</div>
+        <div class="step-body">Proper H-tag hierarchy, featured snippet targets, FAQ schema hooks, clean internal linking. Content that is as navigable for a crawler as it is for a person.</div>
+      </div>
+      <div class="step-card reveal" style="transition-delay:210ms">
+        <div class="step-num">04</div>
+        <div class="step-title">Writing humans actually finish</div>
+        <div class="step-body">Dwell time and engagement signals matter. An article that ranks but bounces is failing. I write in a way that keeps people reading because they want to, not because they have to.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOLD CARE + CHATGPT -->
+<section id="boldcare" class="section section-alt">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">GEO in action</div>
+      <h2 class="section-title">Bold Care ranks in ChatGPT.</h2>
+      <div class="section-subtitle">I write content that AI models cite, not just content that search engines index.</div>
+    </div>
+
+    <div class="approach-body reveal" style="margin-top:0">
+      <p>Bold Care operates in a category that most AI models handle cautiously. Getting ChatGPT to surface your content requires more than keywords. It requires being a credible, structured, citable source. The Bold Care condom guide was written with that in mind: clear product breakdowns, honest comparisons, zero fluff, no brand-first framing.</p>
+      <p>The result: when users ask ChatGPT about ultra-thin condoms in India, Bold Care's content gets cited. That is GEO. Generative Engine Optimisation. And it is becoming as valuable as a first-page ranking.</p>
+    </div>
+
+    <div class="callout reveal" style="margin-top:32px">
+      <p><strong>Why it works:</strong> AI models pull from content that is authoritative, well-structured, and genuinely useful. The Bold Care guide was written to answer every real question a buyer has, not just the keyword. That specificity is what gets cited.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEO GEO AEO -->
+<section id="methodology" class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">the full picture</div>
+      <h2 class="section-title">SEO. GEO. AEO.</h2>
+      <div class="section-subtitle">Search has three layers now. I write for all three simultaneously.</div>
+    </div>
+
+    <div class="concepts-grid">
+      <div class="concept-card reveal">
+        <div class="concept-title">SEO</div>
+        <div class="concept-full">Search Engine Optimisation</div>
+        <div class="concept-desc">The foundation. Writing content structured for how Google crawls, indexes, and ranks pages. Keyword intent, topical authority, E-E-A-T signals, and on-page architecture that search bots and humans navigate equally well.</div>
+        <div class="tags">
+          <span class="tag">Keyword intent</span><span class="tag">Topical authority</span><span class="tag">E-E-A-T</span><span class="tag">On-page structure</span><span class="tag">Internal linking</span>
+        </div>
+      </div>
+      <div class="concept-card reveal" style="transition-delay:80ms">
+        <div class="concept-title">GEO</div>
+        <div class="concept-full">Generative Engine Optimisation</div>
+        <div class="concept-desc">The new frontier. Writing content that AI models like ChatGPT, Gemini, Perplexity, and Claude pull from when generating answers. Clarity, entity signals, structured data, and source credibility are what get you cited instead of ignored.</div>
+        <div class="tags">
+          <span class="tag">AI citation signals</span><span class="tag">Entity clarity</span><span class="tag">Structured data</span><span class="tag">Answer-first writing</span><span class="tag">Source authority</span>
+        </div>
+      </div>
+      <div class="concept-card reveal" style="transition-delay:160ms">
+        <div class="concept-title">AEO</div>
+        <div class="concept-full">Answer Engine Optimisation</div>
+        <div class="concept-desc">Zero-click is here. Structuring content to appear in featured snippets, People Also Ask boxes, and voice answers. Direct, concise, question-aware formatting that wins the position before someone even clicks through.</div>
+        <div class="tags">
+          <span class="tag">Featured snippets</span><span class="tag">FAQ schema</span><span class="tag">PAA targeting</span><span class="tag">Voice search</span><span class="tag">Zero-click content</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:32px">
+      <p><strong>The shift happening right now:</strong> A brand that ranks #1 on Google but does not appear in ChatGPT answers is already losing share. The writers who understand all three layers and write for all three simultaneously are what brands need now. That is where I work.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">&copy; 2026 Piyush Raut &middot; Senior Content Strategist &amp; Copywriter &middot; <a href="https://thesecretelixir.github.io/portfolio/">back to portfolio</a></footer>
+
+<script>
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)});
+</script>
+</body>
+</html>
